@@ -1,0 +1,120 @@
+/* Layout geral */
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+ #paulo{
+    margin-left: 230px;
+ }
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Sidebar (desktop) */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #f4f4f4;
+    transition: width 0.3s;
+    overflow: hidden;
+    z-index: 5000;
+  }
+  
+  .sidebar.collapsed {
+    width: 50px;
+  }
+  
+  .sidebar.expanded {
+    width: 200px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #eaeaea;
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-top: 60px;
+    margin-left: 230px;
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.3s;
+  }
+  
+  .sidebar.expanded :hover+ .main-content {
+    margin-left: 200px;
+  }
+  
+  /* Footer */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #d01695df;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px -2px 5px rgba(14, 199, 67, 0.1);
+  }
+  
+  /* Responsividade */
+  @media  (max-width: 600px) {
+    .sidebar {
+      display: none;
+    }
+    #paulo{
+    display: none;
+  }
+    .main-content {
+      margin-left: 0;
+    }
+  }
+  /* Sidebar Hover */
+.sidebar.collapsed:hover {
+    width: 200px; /* Expande o sidebar temporariamente */
+  }
+  
+  /* Ajuste do Conteúdo Principal ao Hover */
+  .sidebar.collapsed:hover + .main-content {
+    margin-left: 200px;
+  }
+  
+  /* Transições Suaves */
+  .sidebar, .main-content {
+    transition: width 0.3s, margin-left 0.3s;
+  }
+  
+  /* Compatibilidade com o Estado Expandido */
+  
+  
